@@ -6,6 +6,7 @@
 #include "StdAfx.h"
 #include "process_memory.h"
 #include "filepath_utils.h"
+#include "output_debug.h"
 
 process_memory::process_memory(const process& process) : _process(process)
 {
@@ -23,6 +24,8 @@ process_memory::process_memory(const process& process) : _process(process)
 		this->disable_privilege(SE_DEBUG_NAME);
 		return;
 	}
+
+	DEBUG_INFO(" ");
 
 	// Get list of images.
 	HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32 | TH32CS_SNAPTHREAD | TH32CS_SNAPHEAPLIST, _process.process_id());

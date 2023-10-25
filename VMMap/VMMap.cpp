@@ -10,6 +10,7 @@
 #include "process_list.h"
 #include "process_memory.h"
 #include "string_utils.h"
+#include "output_debug.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
